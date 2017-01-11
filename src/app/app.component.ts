@@ -8,8 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   
   animals: string[];
-  
+  count: number;
+
   constructor() {
     this.animals = ['cat', 'dog', 'rat'];
+    this.count = 1;
+  }
+
+  increment() {
+    this.count += 1;
   }
 }
