@@ -18,4 +18,8 @@ export class AppComponent {
   increment() {
     this.count += 1;
   }
+
+  decrement() {
+    this.count -= 1;
+  }
 }
