@@ -1,3 +1,17 @@
-<p>
-  form works!
-</p>
+<div>
+  <fieldset>
+    <h1>Add user</h1>
+    <form #basicForm="ngForm" (ngSubmit)="save(basicForm.value, basicForm.valid)" novalidate>
+      <!-- we will place our fields here -->
+      <label>Name</label>
+      <!--bind name to ngModel, it's required with minimum 5 characters-->
+      <input type="text" 
+        name="name" [(ngModel)]="formfield.name" 
+        #name="ngModel" required minlength="5">
+        <small [hidden]="name.valid || (name.pristine && !basicForm.submitted)">
+          Name is required (minimum 5 characters).
+        </small>
+        <button type="submit">Submit</button>
+    </form>  	
+  </fieldset>
+</div>
