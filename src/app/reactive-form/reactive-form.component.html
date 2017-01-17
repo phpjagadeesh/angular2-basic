@@ -1,6 +1,17 @@
-<form novalidate [formGroup]="user">
+<fieldset>
+<h3>Reactive Form</h3>
+<form [formGroup]="user" novalidate (ngSubmit)="save(user)">
   <label>
-    <span>Full name</span>
-   <!--  <input type="text" placeholder="Your full name" formControlName="name"> -->
+  <span>Full Name</span>
+  <input type="text" placeholder="Your full name" formControlName="name">
   </label>
-</form>  
+  <small *ngIf="!user.valid && !user.submitted">
+    First Name Required
+  </small>
+  <label><br><br>
+  <span>Second Name</span>
+  <input type="text" placeholder="Your second name" formControlName="secondName">
+  </label>
+  <button type="submit" [disabled]="!user.valid">Submit</button>
+</form>      
+</fieldset>

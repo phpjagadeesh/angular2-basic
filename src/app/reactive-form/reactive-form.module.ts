@@ -1,6 +1,6 @@
 import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
 import { ReactiveFormComponent } from './reactive-form.component'; 
 
@@ -10,15 +10,16 @@ import { ReactiveFormComponent } from './reactive-form.component';
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
-    FormControl,
-    FormGroup
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 
-export class ReactiveForm {
+export class ReactiveFormModule {
 
 }
