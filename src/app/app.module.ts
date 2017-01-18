@@ -7,11 +7,13 @@ import { BasicModule } from './basic/basic.module';
 import { ReactiveFormModule } from './reactive-form/reactive-form.module';
 
 import { AppComponent } from './app.component';
-
+import { HeaderComponent } from './header.component';
+import { Routing } from './app.routing';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +21,8 @@ import { AppComponent } from './app.component';
     HttpModule,
     FormModule,
     BasicModule,
-    ReactiveFormModule
+    ReactiveFormModule,
+    Routing
   ],
   providers: [],
   bootstrap: [AppComponent]
