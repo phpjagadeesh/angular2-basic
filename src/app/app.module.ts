@@ -5,10 +5,15 @@ import { HttpModule } from '@angular/http';
 import { FormModule } from './form/form.module';
 import { BasicModule } from './basic/basic.module';
 import { ReactiveFormModule } from './reactive-form/reactive-form.module';
+import { ServiceUseModule } from './service-use/service-use.module';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header.component';
 import { Routing } from './app.routing';
+
+import { CommonService } from './core/common.service';
+
 
 @NgModule({
   declarations: [
@@ -21,10 +26,13 @@ import { Routing } from './app.routing';
     HttpModule,
     FormModule,
     BasicModule,
+    ServiceUseModule,
     ReactiveFormModule,
     Routing
   ],
-  providers: [],
+  providers: [
+    CommonService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
