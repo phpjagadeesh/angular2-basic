@@ -7,10 +7,22 @@ import { CommonService } from '../core/common.service';
   styleUrls: ['./service-use.component.css']
 })
 
-export class ServiceUseComponent {
+export class ServiceUseComponent implements OnInit {
 
-  constructor(private commonService: CommonService) { 
-    console.log(commonService.getDetails());
-  }
+  serviceGetResponse: string;
+  servicePOSTResponse: string;
 
+  constructor(private commonService: CommonService) {}
+   
+   ngOnInit() {
+
+    this.commonService.getDetails().subscribe(
+      response => this.serviceGetResponse
+    );
+    
+    this.commonService.getMedicalResult().subscribe(
+      response => this.servicePOSTResponse
+    );
+
+  }  
 }
